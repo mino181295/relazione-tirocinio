@@ -7,22 +7,54 @@
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{setspace}
 
-\title{Relazione tirocinio curricolare}
-
-\author{Matteo Minardi}
-
-\date{\today}
-
 \begin{document}
-\maketitle
 
-\begin{abstract}
-Enter a short summary here. What topic do you want to investigate and why? What experiment did you perform? What were your main results and conclusion?
-\end{abstract}
+\begin{titlepage}
+	\newcommand{\HRule}{\rule{\linewidth}{0.1 mm}}
+	\center
+	\textsc{\LARGE Università di Bologna}\\[1.5cm] % Main heading such as the name of your university/college
+	
+	\HRule\\[0.8 cm]
+	{\huge\bfseries Relazione di tirocinio curricolare}\\[0.4cm] % Title of your document
+  \HRule\\[1.5cm]
+  
+	\textsc{\Large Tirocinio esterno in azienda}\\[0.5cm] % Main heading such as the name of your university/college
+	\textsc{\large Presso Diennea}\\[1.5cm] % Main heading such as the name of your university/college
+	
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Autore}\\
+			\textsc{Matteo Minardi}
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright}
+			\large
+			\textit{Tutor Aziendale}\\
+			\textsc{Enrico Olivelli} % Supervisor's name
+    \end{flushright}
+    \begin{flushright}
+			\large
+			\textit{Tutor Didattico}\\
+			\textsc{Annalisa Franco} % Supervisor's name
+		\end{flushright}
+	\end{minipage}
+	
 
+	\vfill\vfill\vfill % Position the date 3/4 down the remaining page
+  
+  {\large Dal \emph{18 Settembre 2017} al \emph{14 Ottobre 2017}}\\[1 cm] % Date, change the \today to a set date if you want to be precise
+	
+\end{titlepage}
 
-\section{Introduction 5 lines to max 1/2 page}
-\label{sec:introduction}
+\section{Introduzione}
+\label{sec:Introduzione}
 
 Explain the context of the experiment here. Why is condensed matter physics interesting or important?
 Optional things you could talk about (but don't have to -- this is up to you): transistors, computers, Quantum computers, fundamental knowledge (e.g. the resistance quantum).
@@ -31,32 +63,13 @@ Briefly explain what methods you will use in the experiment, and what values you
 
 For this section and all following sections: If you refer to an equation, previous result or theory that is not regarded as common knowledge, then cite the source (article or book) where you found this. For example, you can cite the Nano 3 Lecture notes \cite{nano3}.
 
-\section{Theory 2-3 pages}
-\label{sec:theory}
+\section{Tecnologie}
+\label{sec:Tecnologie}
 
-\subsection{Two-dimensional Electron Gas}
-Here, explain the concept of a 2-DEG in GaAs/AlGaAs. What is a 2-DEG and why does it arise?
+\section{Attività}
 
-\subsection{Hall Effect}
-Explain the classical Hall effect in your own words. What do I measure at $B=0$? And what happens if $B>0$? Which effect gives rise to the voltage drop in the vertical direction?
-
-\subsection{Quantum Hall Effect}
-Explain the IQHE in your own words. What does the density of states look like in a 2-DEG when $B=0$? What are Landau levels and how do they arise? What are edge states? What does the electron transport look like when you change the magnetic field? What do you expect to measure?
-
-\section{Experiment 1-2 pages}
-\subsection{Fabrication}
-Explain a step-by-step recipe for fabrication here. How long did you etch and why? What is an Ohmic contact?
-\subsection{Experimental set-up}
-Explain the experimental set-up here. Use a schematic picture (make it yourself in photoshop, paint, ...) to show how the components are connected. Briefly explain how a lock-in amplifier works.
-
-\section{Results and interpretation 2-3 pages}
+\section{Conclusioni}
 Show a graph of the longitudinal resistivity ($\rho_{xx}$) and Hall resistivity ($\rho_{xy}$) versus magnetic field, extracted from the raw data shown in figure \ref{fig:data}. You will have the link to the data in your absalon messages, if not e-mail Guen (guen@nbi.dk). Explain how you calculated these values, and refer to the theory.
-
-\begin{figure}
-\centering
-\includegraphics[width=1\textwidth]{raw_data.png}
-\caption{\label{fig:data}Raw (unprocessed) data. Replace this figure with the one you've made, that shows the resistivity.}
-\end{figure}
 
 \subsection{Classical regime}
 Calculate the sheet electron density $n_{s}$ and electron mobility $\mu$ from the data in the low-field regime, and refer to the theory in section \ref{sec:theory}. Explain how you retrieved the values from the data (did you use a linear fit?).
@@ -141,11 +154,21 @@ You can make lists with automatic numbering \dots
 
 We hope you find write\LaTeX\ useful, and please let us know if you have any feedback using the help menu above.
 
+\renewcommand{\refname}{Bibliografia}
 \begin{thebibliography}{9}
-\bibitem{nano3}
-  K. Grove-Rasmussen og Jesper Nygård,
-  \emph{Kvantefænomener i Nanosystemer}.
-  Niels Bohr Institute \& Nano-Science Center, Københavns Universitet
-
-\end{thebibliography}
+  \bibitem{latexcompanion} 
+  Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
+  \textit{The \LaTeX\ Companion}. 
+  Addison-Wesley, Reading, Massachusetts, 1993.
+   
+  \bibitem{einstein} 
+  Albert Einstein. 
+  \textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
+  [\textit{On the electrodynamics of moving bodies}]. 
+  Annalen der Physik, 322(10):891–921, 1905.
+   
+  \bibitem{knuthwebsite} 
+  Knuth: Computers and Typesetting,
+  \\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
+  \end{thebibliography}
 \end{document}
