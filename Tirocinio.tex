@@ -5,7 +5,14 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{makeidx}
 \usepackage{setspace}
+\usepackage{float}
+
+\makeindex
+\onehalfspacing
+\graphicspath{ {images/}{screenshot/}}
+
 
 \begin{document}
 
@@ -18,8 +25,9 @@
 	{\huge\bfseries Relazione di tirocinio curricolare}\\[0.4cm] % Title of your document
   \HRule\\[1.5cm]
   
-	\textsc{\Large Tirocinio esterno in azienda}\\[0.5cm] % Main heading such as the name of your university/college
-	\textsc{\large Presso Diennea}\\[1.5cm] % Main heading such as the name of your university/college
+	\textsc{\Large Sviluppo e analisi front-end di un prodotto software con workflow
+	aziendale}\\[0.3cm] % Main heading such as the name of your university/college
+	\textsc{\large Presso Diennea S.R.L}\\[1.5cm] % Main heading such as the name of your university/college
 	
 	%------------------------------------------------
 	%	Author(s)
@@ -56,12 +64,41 @@
 \section{Introduzione}
 \label{sec:Introduzione}
 
-Explain the context of the experiment here. Why is condensed matter physics interesting or important?
-Optional things you could talk about (but don't have to -- this is up to you): transistors, computers, Quantum computers, fundamental knowledge (e.g. the resistance quantum).
+\par L'obiettivo principale di questo tirocinio curricolare era l'inserimento formativo
+in un ambiente aziendale con il focus sullo sviluppo e analisi front-end per
+migliorare il prodotto aziendale.\\
+\par L'azienda ha sede principale a Faenza, è un'azienda di fama internazionale con 
+anche una sede estera a Parigi. E' tra le aziende leader nel Digital Marketing 
+orientato al Mail Marketing, ha oltre 700 clienti tra cui BMW, Stroili Oro,  Ducati,
+ Findomestic e molti altri.\\
+Diennea è un'azienda che lavora a stretto contatto con i clienti e la loro immagine digitale a 
+trecentosessanta gradi. Da quindici anni a questa parte sviluppa un prodotto all'avanguardia
+che permette al cliente di gestire tutto ciò che riguarda le campagne pubblicitarie, le newsletter e 
+l'interazione digitale con i propri contatti attraverso canali come e-mail e SMS.\\
+\par Il mio ruolo in tutto ciò è stato quello di far parte del team \emph{Product\&Care} con il ruolo di 
+front-end developer volto a migliorare quelli che sono gli aspetti relativi alla 
+veste grafica e alla \emph{UX (User Expirience)} del loro prodotto.\\
+Il prodotto in questione ha nome \emph{MagNews}
+\begin{figure}[H]
+	\includegraphics[width=4cm]{magnews-diennea.png}
+	\centering
+\end{figure}
+Si occupa di gestire i clienti dell'acquirente all'interno Database su cui vengono
+create campagne mirate a pubblicizzarsi nel modo più efficiente, efficace e intelligente 
+possibile. Tutto questo è contornato da reportistiche dettagliate, dati in tempo reali 
+e moltissime feature interessanti che lo rendono uno dei migliori prodotti in questo
+campo in italia.\\ 
+E' scontato precisare che per realizzare tutto questo è necessaria la combinazione
+di svariate teconlogie che collaborano al fine comune di creare una piattaforma solida
+scalabile e resistente allo stress esercitato dall'uso intensivo delle risorse.\\
+Le risorse infatti, pur essendo di grossa portata, devono essere usate in modo
+performante visto che devono servire milioni di mail ogni giorno e provvedere a centinaia
+di migliaia di richieste. Per tutto questo serve un'architettura distribuita moderna e scalabile. 
 
-Briefly explain what methods you will use in the experiment, and what values you will extract from the data.
-
-For this section and all following sections: If you refer to an equation, previous result or theory that is not regarded as common knowledge, then cite the source (article or book) where you found this. For example, you can cite the Nano 3 Lecture notes \cite{nano3}.
+Ovviamente entrando in un azienda con un alto numero di Developer è stato inevitabile
+affrontare discorsi relativi al versionamento e al workflow aziendale. Tutto questo
+ha concretizzato molte dinamiche viste e affrontate soltanto teoricamente durante il 
+percorso accademico. 
 
 \section{Tecnologie}
 \label{sec:Tecnologie}
@@ -171,4 +208,5 @@ We hope you find write\LaTeX\ useful, and please let us know if you have any fee
   Knuth: Computers and Typesetting,
   \\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
   \end{thebibliography}
+
 \end{document}
