@@ -3,6 +3,7 @@
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{subfigure}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{makeidx}
@@ -11,7 +12,7 @@
 
 \makeindex
 \onehalfspacing
-\graphicspath{ {images/}{screenshot/}}
+\graphicspath{ {images/}{screen/}}
 
 \begin{document}
 \begin{titlepage}
@@ -34,7 +35,7 @@
 	\begin{minipage}{0.4\textwidth}
 		\begin{flushleft}
 			\large
-			\textit{Autore}\\
+			\textit{Tirocinante}\\
 			\textsc{Matteo Minardi}
 		\end{flushleft}
 	\end{minipage}
@@ -134,8 +135,57 @@ Per la parte backend sono stati toccati ambiti come:
 \end{itemize}
 \newpage
 \section{Attività}
+\par In questa sezione verrà illustrata riassuntivamente quella che è stata l'esperienza vera e propria.
+Verranno presi in considerazione uno ad uno tutti i task svolti spiegandone il contesto, contestualizzando
+ed eventualmente indicandone il monte ore utilizzato.
+\subsection{Analisi del framework frontend}
 \subsection{Analisi e rework del monitor segnalazioni}
-Screen, spiegazione, UX, prima-dopo
+\par Uno dei task di improvement del prodotto più onerosi è stato quello del monitor di controllo.
+Internamente hanno un modulo \emph{MagNews} che si occupa della ricezione degli errori,
+dei servizi down, dei problemi e molto altro. Essendo una parte interna del prodotto
+non è mai stato considerata tutta la parte grafica e \emph{UX}. Con il passare del tempo
+il personale che ne fa uso quotidiano ha trovato la necessità di migliorarlo.
+Oltre ad un uso interno, ora viene anche fornito al personale addetto delle persone che
+lo utilizzano esternamente. Per questi motivi è stato necessario ricorrere ad un restyling
+da una situazione di partenza del genere:
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{dashboard_old.png}
+	\centering
+\end{figure}
+In questa figura si può notare che la dasboard è ricca di informazioni, molteplici segnalazioni
+ma il contenuto è gestito male, organizzato in modo poco intuitivo e poco gradevole all'utilizzo.
+Ogni tabella contiene migliaia di voci disordinate, e ogni pagina può contenere più tabelle
+il che rende ancora più confusionario il tutto. Per migliorare tutto questo è stato inserimento
+un framework grafico (\emph{Bootstrap}) e una libreria Javascript (\emph{DataTables}) che consentono
+di maneggiare al meglio e in modo efficiente i componenti obsoleti utilizzati in precedenza.
+Il risultato finale della home è questo:
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{dashboard_new.png}
+	\centering
+\end{figure}
+La navigazione ad altre pagine è più semplice, l'accesso ai warning e ai downservices
+è più agevole e le tabelle sono completamente rinnovate vista l'introduzione della possibilità di
+visualizzazione paginata e ordinamento.
+\par Oltre ad aver cambiato la dashboard principale ho provveduto a far corrispondere schermate secondarie
+che si rifanno allo stesso stile coerente con i colori del brand e l'immagine artistica del prodotto.\\
+Per il login:
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}
+	  \centering
+	  \includegraphics[width=0.45\linewidth]{login_old.png}
+	\end{subfigure}%
+	\begin{subfigure}
+	  \centering
+	  \includegraphics[width=0.45\linewidth]{login_new.png}
+	\end{subfigure}
+\end{figure}
+Per una schermata secondaria fatta in Angular:
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{issue_new.png}
+	\centering
+\end{figure}
+conclusione di questo pezzo
 \subsection{Risoluzione issues aziendali}
 issue aviary, issue Fly-weight, issue findbugs-spotbugs
 \subsection{Rappresentazione grafica delivery}
@@ -143,93 +193,17 @@ grafica javascript, API Rest per fare request GET
 \subsection{Workflow Git}
 Branching, rebasing, workflow
 
-
 \section{Conclusioni}
-Show a graph of the longitudinal resistivity ($\rho_{xx}$) and Hall resistivity ($\rho_{xy}$) versus magnetic field, extracted from the raw data shown in figure \ref{fig:data}. You will have the link to the data in your absalon messages, if not e-mail Guen (guen@nbi.dk). Explain how you calculated these values, and refer to the theory.
-
-\subsection{Classical regime}
-Calculate the sheet electron density $n_{s}$ and electron mobility $\mu$ from the data in the low-field regime, and refer to the theory in section \ref{sec:theory}. Explain how you retrieved the values from the data (did you use a linear fit?).
-Round values off to 1 or 2 significant digits: 8.1643 ~= 8.2. Also, 5e-6 is easier to read than 0.000005.
-
-!OBS: This part is optional (only if you have time left).
-Calculate the uncertainty as follows: \newline $u(f(x, y, z)) = \sqrt{(\frac{\delta f}{\delta{x}} u(x))^{2} + (\frac{\delta f}{\delta{y}} u(y))^{2} + (\frac{\delta f}{\delta{z}} u(z))^{2}}$, where $f$ is the calculated value ($n_{s}$ or $\mu$), $x, y, z$ are the variables taken from the measurement and $u(x)$ is the uncertainty in x (and so on).
-
-\subsection{Quantum regime}
-Calculate $n_{s}$ for the high-field regime.
-Show a graph of the longitudinal conductivity ($\rho_{xx}$) and Hall conductivity($\rho_{xy}$) \textbf{in units of the resistance quantum} ($\frac{h}{e^{2}}$), depicting the integer filling factors for each plateau.
-Show a graph of the plateau number versus its corresponding value of $1/B$. From this you can determine the slope, which you use to calculate the electron density.
-Again, calculate the uncertainty for your obtained values.
-
-\section{Discussion 1/2-1 page}
-Discuss your results. Compare the two values of $n_{s}$ that you've found in the previous section. Compare your results with literature and comment on the difference. If you didn't know the value of the resistance quantum, would you be able to deduce it from your measurements? If yes/no, why?
-
-\newpage
-\section{Some LaTeX tips}
-\label{sec:latex}
-\subsection{How to Include Figures}
-
-First you have to upload the image file (JPEG, PNG or PDF) from your computer to writeLaTeX using the upload link the project menu. Then use the includegraphics command to include it in your document. Use the figure environment and the caption command to add a number and a caption to your figure. See the code for Figure \ref{fig:frog} in this section for an example.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.3\textwidth]{frog.jpg}
-\caption{\label{fig:frog}This frog was uploaded to writeLaTeX via the project menu.}
-\end{figure}
-
-\subsection{How to Make Tables}
-
-Use the table and tabular commands for basic tables --- see Table~\ref{tab:widgets}, for example.
-
-\begin{table}
-\centering
-\begin{tabular}{l|r}
-Item & Quantity \\\hline
-Widgets & 42 \\
-Gadgets & 13
-\end{tabular}
-\caption{\label{tab:widgets}An example table.}
-\end{table}
-
-\subsection{How to Write Mathematics}
-
-\LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
-
-\begin{equation}
-S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
-      = \frac{1}{n}\sum_{i}^{n} X_i
-\label{eq:sn}
-\end{equation}
-
-denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
-
-The equation \ref{eq:sn} is very nice.
-
-\subsection{How to Make Sections and Subsections}
-
-Use section and subsection commands to organize your document. \LaTeX{} handles all the formatting and numbering automatically. Use ref and label commands for cross-references.
-
-\subsection{How to Make Lists}
-
-You can make lists with automatic numbering \dots
-
-\begin{enumerate}
-\item Like this,
-\item and like this.
-\end{enumerate}
-\dots or bullet points \dots
-\begin{itemize}
-\item Like this,
-\item and like this.
-\end{itemize}
-\dots or with words and descriptions \dots
-\begin{description}
-\item[Word] Definition
-\item[Concept] Explanation
-\item[Idea] Text
-\end{description}
-
-We hope you find write\LaTeX\ useful, and please let us know if you have any feedback using the help menu above.
-
+\par In conclusione è stata una esperienza nel complesso positiva. Ha avuto alti e bassi in quanto 
+a mole di lavoro e produttività. Nei momenti lati includerei la grande quantità
+di esperienza acquisita a contatto con senior developers, esperienza di quella che è
+la modalità di lavoro in collaborazione e la vasta copertura tecnologica all'interno
+dell'azienda. Nei lati negativi inserirei assolutamente la difficoltà in un tirocinio
+di 150 ore ad inserirsi in un progetto di quella complessità riuscendo ad avere un 
+impatto vero e proprio. \\
+Questo tipo di esperienza ti apre gli occhi sul mondo del lavoro ma allo stesso tempo
+ti fa realizzare che in ambito informatico l'orizzonte è ampio e c'è una vasta disomogeneità
+su quella che è la conoscenza richiesta.
 \renewcommand{\refname}{Bibliografia}
 \begin{thebibliography}{9}
   \bibitem{latexcompanion} 
