@@ -187,13 +187,61 @@ Per una schermata secondaria fatta in Angular:
 \end{figure}
 conclusione di questo pezzo
 \subsection{Risoluzione issues aziendali}
-issue aviary, issue Fly-weight, issue findbugs-spotbugs
+\par risoluzione issue\\
+\par \textbf{Issue aviary}: issue\\
+\par \textbf{Issue jQuery}: issue\\
+\par \textbf{Issue Findbugs}: issue\\
 \subsection{Rappresentazione grafica delivery}
 grafica javascript, API Rest per fare request GET
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Monitor.jpg}
+	\centering
+\end{figure}
 \subsection{Workflow Git}
-Branching, rebasing, workflow
+\par Una tra le cose più interessanti dell'andare in azienda è stato quello dell'inserirsi
+nel workflow di un'azienda affermata che quotidianamente si trova di fronte a problemi,
+task, feature e improvements da sviluppare. Tutto questo è scandito dal fatto che lo sviluppo
+ha una tabella di marcia con date di release mensili ben definite.\\
+Per questi motivi è necessario mantenere un ecosistema collaborativo, organizzato
+al quale poter far riferimento durante la propria routine lavorativa.
+Innanzitutto tutto il team fa utilizzo dell'ecosistema \emph{Atalassian Bitbucket}
+on premise per mantenere il repository su un server locale sicuro ed affidabile.
+Atalassian offre inoltre una priattaforma chiamata \emph{Jira} per pianificare, monitorare ed assegnare
+ai dev compiti da svolgere e attività. \emph{Jira} è completamente in sinergia con
+Bitbucket per quanto riguarda i commit riguardo quel branch di lavoro e per le code review 
+del lavoro.
+In azienda viene utilizzato \emph{Git} con un \emph{Feature Branch Workflow}.
+Questo workflow è tipico dello sviluppo agile e ha la peculiarità di far lavorare
+le persone su un branch dedicato alla feature e lasciare il master in uno stato funzionante
+in modo da permettere di avere il programma intatto e le feature che lavorano in parallelo 
+su branch che toccano parti di programma diverse.
+\begin{figure}[H]
+	\includegraphics[width=0.8\textwidth]{feature-branch.png}
+	\centering
+\end{figure}
+Solitamente ogni branch feature ha nome uguale (o che contiene il codice) dell'issue
+a cui fa riferimento e ogni commit, allo stesso modo, contiene un codice univoco.
+In questo modo la sincronizzazione è completa tra \emph{Jira} e \emph{Bitbucket} e quindi
+di conseguenza tra organizzazione e sviluppo del codice.
+Il solito iter di sviluppo è il seguente:
+\begin{enumerate}
+	\item Prendere in carico un issue segnalato.
+	\item Creare un branch con il codice dell'issue.
+	\item Fare i vari commit di sviluppo del branch.
+	\item Fare un rebase del master e squash dei commit superflui.
+	\item Attendere la code review del codice aggiunto.
+	\item Integrare al master la feature terminata.
+\end{enumerate}
+\par In questa maniera e con queste particolari tecnologie lavorare in collaborazione
+è più comodo, efficace e organizzato. Può causare eccessivi passaggi durante lo sviluppo
+ma mantiene il tutto ``pulito'' e tracciato in modo da poter tornare indietro ad una
+versione funzionante in ogni momento. 
 
 \section{Conclusioni}
+\par Alla fine delle 150 ore è stato prodotto il frontend di un monitor, sono stati
+sistemati bug del prodotto e analizzati diversi framework al fine di avviare un
+processo di rework completo che potrebbe durare anche parecchi mesi. Reputo positivo il risultato
+visto che si tratta di un progetto molto vasto e complesso.
 \par In conclusione è stata una esperienza nel complesso positiva. Ha avuto alti e bassi in quanto 
 a mole di lavoro e produttività. Nei momenti lati includerei la grande quantità
 di esperienza acquisita a contatto con senior developers, esperienza di quella che è
@@ -204,6 +252,7 @@ impatto vero e proprio. \\
 Questo tipo di esperienza ti apre gli occhi sul mondo del lavoro ma allo stesso tempo
 ti fa realizzare che in ambito informatico l'orizzonte è ampio e c'è una vasta disomogeneità
 su quella che è la conoscenza richiesta.
+
 \renewcommand{\refname}{Bibliografia}
 \begin{thebibliography}{9}
   \bibitem{latexcompanion} 
