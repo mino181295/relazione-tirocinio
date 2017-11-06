@@ -11,7 +11,6 @@
 \usepackage{float}
 
 \makeindex
-\onehalfspacing
 \graphicspath{ {images/}{screen/}}
 
 \begin{document}
@@ -133,7 +132,6 @@ Per la parte backend sono stati toccati ambiti come:
 	\item Maven
 	\item Java e JSP
 \end{itemize}
-\newpage
 \section{Attività}
 \par In questa sezione verrà illustrata riassuntivamente quella che è stata l'esperienza vera e propria.
 Verranno presi in considerazione uno ad uno tutti i task svolti spiegandone il contesto, contestualizzando
@@ -185,16 +183,87 @@ Per una schermata secondaria fatta in Angular:
 	\includegraphics[width=\textwidth]{issue_new.png}
 	\centering
 \end{figure}
-conclusione di questo pezzo
+
+\par In questo modo si può filtrare, con query di ricerca, tutto quello che riguarda le colonne
+e si possono visualizzare, anche in questa pagina, l'elenco dei servizi down con il 
+riferimento a quanto tempo è che lo sono. 
+
 \subsection{Risoluzione issues aziendali}
-\par risoluzione issue\\
-\par \textbf{Issue aviary}: issue\\
-\par \textbf{Issue jQuery}: issue\\
-\par \textbf{Issue Findbugs}: issue\\
+\par Durante lo sviluppo del prodotto, per mantenere il ritmo di rilascio mensile è 
+ovviamente necessario che le persone che si occupano di quality assurance si occupino 
+di mettere alla prova il programma in modo da averne un riscontro umano che va oltre
+alle capacita dello Unit testing. Una parte molto importante, che fornisce input
+ai developer sono gli \emph{issue}. Ovviamente questi input arrivano anche da segnalazioni
+dei clienti oppure addirittura dai dev stessi che possono, allo stesso modo, fare richiesta
+di segnalazione bug.\\
+\par Inserirsi in un prodotto così ampio non è immediato, richiede tempo e studio.
+Una comprensione completa non è possibile all'interno di un tirocinio curricolare, per
+questi motivi mi sono stati assegnati principalmente tre issue prettamente formativi 
+e mirati a farmi prendere dimestichezza con il progetto.
+\par \textbf{Issue Aviary}: questo è un issue diviso in due parti: la parte di ricerca 
+e analisi e la parte di aggiornamento. In breve Aviary è un \emph{SaaS} della famiglia
+Adobe che fornisce gli strumenti necessari per la manipolazione di immagini attraverso
+un editor posizionabile nel browser. Questo strumento verrà dismesso e non viene più
+supportato dall'azienda. Questo implicava la ricerca di un sostituto e l'aggiornamento all'ultima versione.
+Durante il progetto è stato sviluppato un piccolo prototipo di quello che sarà il successore.
+Non sarà più un unico software ma l'unione di più librerie modulari che consentono di
+ottenere un risultato più contenuto, intuitivo e mirato togliendo funzioni statisticamente
+meno usate.\\
+\par \textbf{Issue jQuery}: Buona parte delle animazioni è gestito da eventi jQuery 
+dinamici che, alle volte, portano a bug di visualizzazione. Essendo numerosissime
+le casistiche all'interno del codice, ho dedicato parecchie ore al fix di malfunzionamenti
+logici, alla gestione di servizi di store di dati nella sessione e nel salvataggio di cookie.
+Questo task, comprendeva anche los sviluppo di alcuni moduli \emph{Angular} e query live
+che comunicavano con API Rest che prendevano i dati a loro volta dal backend Java.\\
+\par \textbf{Issue Findbugs}: findbugs è uno dei plugin più utilizzati a build time 
+per l'intercettazione e la correzione di possibili errori logici all'interno del codice.
+Questo programma, come Aviary, non è più aggiornato ed ormai è obsoleto per le nuove
+versioni di Java. Fortunatamente è stato fatto un fork chiamato \emph{SpotBugs}.
+Questo fork essenzialmente si pone il goal di offrire le stesse funzionalità, nella
+maniera più legacy possibile e portando avanti nuove feature.\\
+Tutto questo, da parte mia è stato integrato alle \emph{dependency} e ai \emph{plugin}
+Maven, e quindi è stato inserito nei file \emph{pom.xml}. In questo modo la build viene
+eseguita con SpotBugs al posto di Findbugs. Questo task è stato formativo nei confronti
+del build system Maven che è diverso da quello base Eclipse. Mette in gioco moltissime
+funzionalità dinamiche di building del progetto e consente al programmatore di gestire
+moduli, plugin, generazione di documentazione, unit testing e molto altro.
+\\
 \subsection{Rappresentazione grafica delivery}
-grafica javascript, API Rest per fare request GET
+\par Lo scopo principale di questo task era quello di creare una rappresentazione visuale
+di quella che è la situazione della delivery aziendale delle mail. L'azienda spedisce
+milioni di mail al giorno, molte delle quali fanno una coda di invio visti i costi 
+computazionali dell'invio di così tanti dati. Molte mail vengono perse e quindi re-inviate.
+Tutto questo processo è stato richiesto in una rappresentazione grafica su browser web.
+I concetti chiave sono sicuramente le mail, la loro quantità, quando vengono richieste, quando
+vengono effettivamente inviate e la quantità totale delle mail giornaliere.
+\par Tutti questi dati sono stati immaginati graficamente come una pioggia di sfere (piene o vuote
+in base a se si tratta di un invio di e-mail o SMS) che cadono durante il loro invio in un mare il cui
+livello rappresenta il monte mail raggiunto nel giorno corrente. Il concept grafico è stato sviluppato
+dall'UX designer in questo modo:
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{Monitor.jpg}
+	\centering
+\end{figure}
+\par Per fare in modo che il tutto prendesse forma ho sviluppato 2 parti diverse: la logica di modello,
+la grafica in Javascript. Le classi di modello Javascript contengono un metodo che fa l'\emph{update}
+e un metodo che fa il \emph{draw} della forma che rappresenta. Le palline sono sfere che possono 
+collidere con il terreno che è formato da tasselli che aumentano l'altezza in base al 
+valore di mail inviate. Le palline possono ``spawnare'' orizzontalmente come pioggia dal
+cielo. La scritta incrementa il valore continuamente in base al valore che allo stesso tempo
+indica il livello al terreno.
+\par Per realizzare la parte grafica ho utilizzato la libreria Javascript \textbf{p5.js}.
+Questa libreria mette a disposizione un controller con metodi di inizializzazione e game loop
+per il disegno grafico. Mette a disposizione una libreria per le collisioni tra figure e la creazione
+di figure castom attraverso curve di bezier e vertici.
+\par Un'altra parte importante è l'ottenimento dei dati dal server. Per fare in modo che i dati
+siano aggiornati si utilizza una logica polling temporizzata che chiede al server la situazione
+ogni minuto partendo un minuto in ritardo. Con questo stratagemma si è a conoscenza della situazione della Mail
+nel momento attuale e quello del minuto precedente. Fatto ciò si possono ottenere le informazioni
+in modo leggere con un file JSON opportunamente creato e letto in modo nativo da Javascript.
+Il risultato finale è molto simile a quello posto in partenza e tutt'ora è in via di sviluppo per 
+quanto riguarda le animazioni e le migliorie grafiche.
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{delivery-final.png}
 	\centering
 \end{figure}
 \subsection{Workflow Git}
