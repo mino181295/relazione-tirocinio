@@ -137,6 +137,52 @@ Per la parte backend sono stati toccati ambiti come:
 Verranno presi in considerazione uno ad uno tutti i task svolti spiegandone il contesto, contestualizzando
 ed eventualmente indicandone il monte ore utilizzato.
 \subsection{Analisi del framework frontend}
+\par Essendo una nuova risorsa dev del team mi è stata posta davanti la piattaforma per
+ottenere quello che è un primo impatto per quanto riguarda l'usabilità e l'esperienza
+grafica del prodotto.
+\par Durante l'analisi ho diviso in due parti principali le osservazioni: \emph{analisi UX e analisi UI}.
+Da quello che ho potuto notare il look and feel è obsoleto e si ha difficoltà a navigare 
+nella piattaforma prima del corso di formazione. Non viene presa in considerazione la responsivness,
+il sito è molto statico e deformato visto da mobile. Il sito è organizzato con il codice
+HTML con una impostazione tabellare non accessibile. Per l'analisi UX è stato convenuto 
+che molti menù sono ridondanti, vengono aperte numerose dialog, vengono valorizzati in 
+modo poco oppurton i valori di errore e segnalazione.
+\par Il codice grafico è realizzato con una fusione tra Java e il frontend, viene utilizzato
+un linguaggio proprietario di Adobe chiamato \emph{CloudFusion}, questo linguaggio ha
+molte peculiarità vantaggiose per un backend Java come quello di \emph{MagNews}.
+Il codice risulta però poco supportato, è riconducibile a PHP però permette di creare
+componenti al fine di avere un proprio framework consolidato che fornisce i ``mattoni''
+per costruire il frontend.
+\par Visto l'imminente restyling di questa parte sono state presi in analisi diversi
+framework moderni scritti in Javascript che permettono di creare una propria componentistica
+personalizzata fatta su misura per le proprie esigenze. Deve essere supportata, 
+documentata e affidabile. Il framework deve necessariamente essere solido visto che 
+è alla base di un prodotto che richiede efficienza e sicurezza. \\
+
+\par Ora verranno presentati i framework analizzati in una breve carrellata che li
+presenta ad uno ad uno.
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{frameworks.png}
+	\centering
+\end{figure}
+\par \textbf{Angular 2}: questo framework permette di creare reactive \emph{Single-Page-Applications}.
+Il file HTML rimane lo stesso, non avvengono reloading ma il core \emph{TypeScript} permette di 
+ottenere la dinamicità tanto desiderata. Il linguaggio è un super set di Javascript che rende più
+performante il tutto grazie anche alla tipizzazione statitca delle variabili. La curva di 
+apprendimento è molto lenta sia dal punto di vista organizzativo sia dall'architettura di 
+comunicazione. Esistono infatti di due tipi: Databinding e Eventbinding. Questi due pattern
+permettono la comunicazione a due vie tra template HTML e Javascript. Tutto questo è
+contornato dalla posibilità di creare componenti personalizzate e ad-hoc per le proprie esigenze
+nel modo più modulare e scalabile possibile.\\ 
+Il principale aspetto negativo analizzato è quello della velocità di aggiornamento molto elevata
+e la difficoltà di apprendimento. Questa logica potrebbe prevedere uno stravolgimento ripetto 
+alla versione precedente \emph{AngularJS}.
+\par \textbf{ReactJS}: il focus di questo framework è quello creazionale. La creazione di componenti
+complessi con una loro logica è possibile anche grazie all'utilizzo di HTML all'interno di Javascript.
+Ha la caratterisitica di migliorare il debugging visto che fallisce a compile time e non, come Angular,
+a runtime. La curva di apprendimento è più rapida e permette di snellire il codice e rendere tutto più
+efficiente. A suo favore è OpenSource, largamente supportato dalla community e compatibile anche con 
+vecchie versioni di browser.
 \subsection{Analisi e rework del monitor segnalazioni}
 \par Uno dei task di improvement del prodotto più onerosi è stato quello del monitor di controllo.
 Internamente hanno un modulo \emph{MagNews} che si occupa della ricezione degli errori,
@@ -232,7 +278,7 @@ moduli, plugin, generazione di documentazione, unit testing e molto altro.
 \par Questa attività rappresenta il core del lavoro in un team di developer che sviluppano
 un prodotto. E' importante essere sempre dinamici e pronti a intervenire in parti di codice
 nuove, sviluppate da altri ed eventualmente mai viste.
-\\
+\newpage
 \subsection{Rappresentazione grafica delivery}
 \par Lo scopo principale di questo task era quello di creare una rappresentazione visuale
 di quella che è la situazione della delivery aziendale delle mail. L'azienda spedisce
@@ -330,6 +376,7 @@ Questo tipo di esperienza ti apre gli occhi sul mondo del lavoro ma allo stesso 
 ti fa realizzare che in ambito informatico l'orizzonte è ampio e c'è una vasta disomogeneità
 su quella che è la conoscenza richiesta.
 
+\iffalse
 \renewcommand{\refname}{Bibliografia}
 \begin{thebibliography}{9}
   \bibitem{latexcompanion} 
@@ -347,5 +394,5 @@ su quella che è la conoscenza richiesta.
   Knuth: Computers and Typesetting,
   \\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
   \end{thebibliography}
-
+\fi
 \end{document}
