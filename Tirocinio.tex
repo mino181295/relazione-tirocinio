@@ -188,11 +188,11 @@ vecchie versioni di browser.
 \par Uno dei task di improvement del prodotto più onerosi è stato quello del monitor di controllo.
 Internamente hanno un modulo \emph{MagNews} che si occupa della ricezione degli errori,
 dei servizi down, dei problemi e molto altro. Essendo una parte interna del prodotto
-non è mai stato considerata tutta la parte grafica e \emph{UX}. Con il passare del tempo
-il personale che ne fa uso quotidiano ha trovato la necessità di migliorarlo.
+non è mai stata sviluppa tutta la parte grafica e \emph{UX}. Con il passare del tempo
+il personale che ne fa uso quotidiano ha sentito la necessità di migliorarlo.
 Oltre ad un uso interno, ora viene anche fornito al personale addetto delle persone che
-lo utilizzano esternamente. Per questi motivi è stato necessario ricorrere ad un restyling
-da una situazione di partenza del genere:
+lo utilizzano esternamente all'azienda. Per questi motivi è stato necessario ricorrere ad un restyling
+da una situazione di partenza di questo tipo:
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{dashboard_old.png}
 	\centering
@@ -212,7 +212,7 @@ Il risultato finale della home è questo:
 \end{figure}
 La navigazione ad altre pagine è più semplice, l'accesso ai warning e ai downservices
 è più agevole e le tabelle sono completamente rinnovate vista l'introduzione della possibilità di
-visualizzazione paginata e ordinamento.
+visualizzazione paginata e dell'ordinamento.
 \par Oltre ad aver cambiato la dashboard principale ho provveduto a far corrispondere schermate secondarie
 che si rifanno allo stesso stile coerente con i colori del brand e l'immagine artistica del prodotto.\\
 Per il login:
@@ -239,13 +239,13 @@ e si possono visualizzare, anche in questa pagina, l'elenco dei servizi down con
 riferimento a quanto tempo è che lo sono. 
 \par Questa è l'attività più corposa a livello di ore e impegno. Ha causato molti problemi di 
 redesign nuove feature e apertura e chiusura del task \emph{Jira}. È un task dinamico
-che si basa anche sull esigenze, sempre in cambiamento, dei loro utilizzatori.
+che si basa anche sulle esigenze, sempre in cambiamento, dei loro utilizzatori.
 
 \subsection{Risoluzione issues aziendali}
 \par Durante lo sviluppo del prodotto, per mantenere il ritmo di rilascio mensile è 
-ovviamente necessario che le persone che si occupano di quality assurance si occupino 
+ovviamente necessario che le persone che svolgono il lavoro di quality assurance si occupino 
 di mettere alla prova il programma in modo da averne un riscontro umano che va oltre
-alle capacita dello Unit testing. Una parte molto importante, che fornisce input
+alle capacita dello \emph{unit testing}. Una parte molto importante, che fornisce input
 ai developer sono gli \emph{issue}. Ovviamente questi input arrivano anche da segnalazioni
 dei clienti oppure addirittura dai dev stessi che possono, allo stesso modo, fare richiesta
 di segnalazione bug.\\
@@ -266,14 +266,14 @@ meno usate.\\
 dinamici che, alle volte, portano a bug di visualizzazione. Essendo numerosissime
 le casistiche all'interno del codice, ho dedicato parecchie ore al fix di malfunzionamenti
 logici, alla gestione di servizi di store di dati nella sessione e nel salvataggio di cookie.
-Questo task, comprendeva anche los sviluppo di alcuni moduli \emph{Angular} e query live
+Questo task, comprendeva anche lo sviluppo di alcuni moduli \emph{Angular} e query live
 che comunicavano con API Rest che prendevano i dati a loro volta dal backend Java.\\
-\par \textbf{Issue Findbugs}: findbugs è uno dei plugin più utilizzati a build time 
+\par \textbf{Issue Findbugs}: \emph{findbugs} è uno dei plugin più utilizzati a build time 
 per l'intercettazione e la correzione di possibili errori logici all'interno del codice.
 Questo programma, come Aviary, non è più aggiornato ed ormai è obsoleto per le nuove
 versioni di Java. Fortunatamente è stato fatto un fork chiamato \mbox{\emph{SpotBugs}}.
 Questo fork essenzialmente si pone il goal di offrire le stesse fun\-zio\-na\-li\-tà, nella
-maniera più legacy possibile e portando avanti nuove feature.\\
+stessa maniera del suo predecessore massimizzando la retrocompatibilità e portando avanti nuove feature.\\
 Tutto questo, da parte mia è stato integrato alle \emph{dependency} e ai \emph{plugin}
 Maven, e quindi è stato inserito nei file \emph{pom.xml}. In questo modo la build viene
 ese\-gui\-ta con SpotBugs al posto di Findbugs. Questo task è stato formativo nei confronti
@@ -287,7 +287,7 @@ nuove, sviluppate da altri ed eventualmente mai viste.
 \subsection{Rappresentazione grafica delivery}
 \par Lo scopo principale di questo task era quello di creare una rappresentazione visuale
 di quella che è la situazione della delivery aziendale delle mail. L'azienda spedisce
-milioni di mail al giorno, molte delle quali fanno una coda di invio visti i costi 
+milioni di mail al giorno, molte delle quali fanno una coda di uscita visti i costi 
 computazionali dell'invio di così tanti dati. Molte mail vengono perse e quindi re-inviate.
 Tutto questo processo è stato richiesto in una rappresentazione grafica su browser web.
 I concetti chiave sono sicuramente le mail, la loro quantità, quando vengono richieste, quando
@@ -314,9 +314,9 @@ per il disegno grafico. Mette a disposizione una libreria per le collisioni tra 
 di figure custom attraverso curve di bezier e vertici.
 \par Un'altra parte importante è l'ottenimento dei dati dal server. Per fare in modo che i dati
 siano aggiornati si utilizza una logica polling temporizzata che chiede al server la situazione
-ogni minuto partendo un minuto in ritardo. Con questo stratagemma si è a conoscenza della situazione della Mail
+ogni minuto partendo un minuto in ritardo. Con questo stratagemma si è a conoscenza della situazione della mail
 nel momento attuale e quello del minuto precedente. Fatto ciò si possono ottenere le informazioni
-in modo leggero con un file JSON opportunamente creato e letto in modo nativo da Javascript.
+in modo leggero con un file \emph{JSON} opportunamente creato e letto in modo nativo da Javascript.
 Il risultato finale è molto simile a quello posto in partenza e tutt'ora è in via di sviluppo per 
 quanto riguarda le animazioni e le migliorie grafiche.
 \begin{figure}[H]
@@ -325,7 +325,7 @@ quanto riguarda le animazioni e le migliorie grafiche.
 	\caption{Risultato finale della delivery grafica}
 \end{figure}
 \par Questo è uno dei task piu divertenti e stuzzicanti dal punto di vista implementativo e
-visivo. Mi ha permesso di studiare una libreria grafica e scegliere un dominio implementativo 
+visivo. Mi ha permesso di studiare una libreria grafica e scegliere un dominio applicativo 
 utile in azienda.
 \subsection{Workflow Git}
 \par Una tra le cose più interessanti dell'andare in azienda è stato quello dell'inserirsi
@@ -334,11 +334,11 @@ task, feature e improvements da sviluppare. Tutto questo è scandito dal fatto c
 ha una tabella di marcia con date di release mensili ben definite.
 \par Per questi motivi è necessario mantenere un ecosistema collaborativo, organizzato
 al quale poter far riferimento durante la propria routine lavorativa.
-Innanzitutto tutto il team fa utilizzo dell'ecosistema \emph{Atalassian Bitbucket}
+Innanzitutto tutto il team fa utilizzo dei software offerti da \emph{Atalassian Bitbucket}
 on premise per mantenere il repository su un server locale sicuro ed affidabile.
 Atalassian offre inoltre una piattaforma chiamata \emph{Jira} per pianificare, monitorare ed assegnare
 ai dev compiti da svolgere e attività. \emph{Jira} è completamente in sinergia con
-Bitbucket per quanto riguarda i commit riguardo quel branch di lavoro e per le code review 
+Bitbucket per quanto riguarda i commit riguardo quel branch di lavoro e per le \emph{code review} 
 del lavoro.
 \par In azienda viene utilizzato \emph{Git} con un \emph{Feature Branch Workflow}.
 Questo workflow è tipico dello sviluppo agile e ha la peculiarità di far lavorare
@@ -350,7 +350,7 @@ su branch che toccano parti di programma diverse.
 	\centering
 	\caption{Esempio visuale del feature workflow}
 \end{figure}
-\par Solitamente ogni branch feature ha nome uguale (o che contiene il codice) dell'issue
+\par Solitamente ogni branch feature ha nome uguale (o che contiene il codice) dell'issue (esempio MN-12910)
 a cui fa riferimento e ogni commit, allo stesso modo, contiene un codice univoco.
 In questo modo la sincronizzazione è completa tra \emph{Jira} e \emph{Bitbucket} e quindi
 di conseguenza tra organizzazione e sviluppo del codice.
